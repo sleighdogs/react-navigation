@@ -1,7 +1,7 @@
 /* @flow */
 
 import * as React from 'react';
-import { View, StyleSheet, Platform } from 'react-native';
+import { View, StyleSheet, Platform, Dimensions } from 'react-native';
 import { TabViewAnimated, TabViewPagerPan } from 'react-native-tab-view';
 import type { Layout } from 'react-native-tab-view/src/TabViewTypeDefinitions';
 import SceneView from '../SceneView';
