@@ -55,12 +55,15 @@ type Props = {
   },
 };
 
+let defaultInitialLayout = undefined;
+if (Platform.OS === 'android') {
+  const { width, height } = Dimensions.get('window');
+  defaultInitialLayout = { width, height };
+}
+
 class TabView extends React.PureComponent<Props> {
   static defaultProps = {
-    // fix for https://github.com/react-native-community/react-native-tab-view/issues/312
-    initialLayout: Platform.select({
-      android: { width: 1, height: 0 },
-    }),
+    initialLayout: defaultInitialLayout,
   };
 
   _handlePageChanged = (index: number) => {
